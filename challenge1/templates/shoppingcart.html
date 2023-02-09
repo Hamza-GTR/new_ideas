@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+<div class="container my-5">
+  <h1>Shopping Cart</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart %}
+      <tr>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.product.price }}</td>
+        <td>
+          <form action="{% url 'cart' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="product_id" value="{{ item.product.id }}">
+            <input type="hidden" name="action" value="update">
+            <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+            <button type="submit" class="btn btn-primary btn-sm">Update</button>
+          </form>
+        </td>
+        <td>{{ item.total }}</td>
+        <td>
+          <form action="{% url 'cart' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="product_id" value="{{ item.product.id }}">
+            <input type="hidden" name="action" value="remove">
+            <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="3"></td>
+        <td><strong>Total:</strong></td>
+        <td><strong>{{ cart_total }}</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="{% url 'products' %}" class="btn btn-primary">Continue Shopping</a>
+</div>
+{% endblock %}
