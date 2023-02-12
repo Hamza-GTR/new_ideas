@@ -26,3 +26,4 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField()
+    details = models.ForeignKey(Details, on_delete=models.CASCADE, default=None)
