@@ -16,7 +16,6 @@ class Customer(models.Model):
 
 
 class Details(models.Model):
-    covers = models.ForeignKey(Covers, on_delete=models.CASCADE, default=None)
     description = models.CharField(max_length=100)
     price = models.PositiveIntegerField()
     discount = models.IntegerField()
