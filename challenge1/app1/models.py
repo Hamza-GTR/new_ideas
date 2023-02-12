@@ -20,3 +20,9 @@ class Details(models.Model):
     description = models.CharField(max_length=100)
     price = models.PositiveIntegerField()
     discount = models.IntegerField()
+
+
+class Product(models.Model):
+    name = models.CharField(max_length=50)
+    category = models.CharField(max_length=50)
+    quantity = models.PositiveIntegerField()
