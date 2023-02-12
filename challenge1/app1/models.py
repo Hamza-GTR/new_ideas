@@ -24,7 +24,7 @@ class Details(models.Model):
     discount = models.IntegerField()
 
 
-class Product(models.Model):
+class Products(models.Model):
     name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField()
