@@ -19,7 +19,7 @@ class Customer(models.Model):
 
 
 class ProductDetails(models.Model):
-    description = models.CharField(max_length=200)
+    features = models.CharField(max_length=200)
     price = models.PositiveIntegerField()
     discount = models.IntegerField()
 
