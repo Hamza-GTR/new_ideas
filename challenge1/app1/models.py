@@ -18,7 +18,7 @@ class Customer(models.Model):
     relation = models.ForeignKey(User, on_delete=models.CASCADE, default=None, blank=False)
 
 
-class Details(models.Model):
+class ProductDetails(models.Model):
     description = models.CharField(max_length=200)
     price = models.PositiveIntegerField()
     discount = models.IntegerField()
