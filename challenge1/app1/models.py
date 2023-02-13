@@ -48,8 +48,4 @@ class Shipping_Address(models.Model):
     phoneNumber = models.IntegerField(default=None)
 
 
-class Order_Items(models.Model):
-    product = models.ForeignKey(Products, related_name='s_product', on_delete=models.CASCADE, default=None)
-    order = models.ForeignKey(Order, related_name='s_order', on_delete=models.CASCADE, default=None)
-    price = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
-    Date = models.DateTimeField(auto_now_add=True)
+
