@@ -29,16 +29,3 @@ class Products(models.Model):
     category = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField()
     details = models.ForeignKey(ProductDetails, on_delete=models.CASCADE, default=None)
-
-
-class Order(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    status = models.BooleanField(default=False)
-    paid = models.BooleanField(default=False)
-    amount = models.IntegerField(default=None, blank=True, null=True)
-
-
-
-
-
-
