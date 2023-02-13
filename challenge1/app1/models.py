@@ -36,3 +36,13 @@ class Order(models.Model):
     status = models.BooleanField(default=False)
     paid = models.BooleanField(default=False)
     amount = models.IntegerField(default=None, blank=True, null=True)
+
+
+class Shipping_Address(models.Model):
+    ship_adr = models.ForeignKey(Order, on_delete=models.CASCADE, default=None)
+    Street = models.CharField(max_length=30, default=None)
+    City = models.CharField(max_length=30, default=None)
+    State = models.CharField(max_length=30, default=None)
+    PostalCode = models.PositiveIntegerField(default=None)
+    Country = models.CharField(max_length=30, default=None)
+    phoneNumber = models.IntegerField(default=None)
