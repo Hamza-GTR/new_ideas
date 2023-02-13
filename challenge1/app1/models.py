@@ -25,7 +25,7 @@ class Order(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     total_cost = models.DecimalField(max_digits=10, decimal_places=2)
     shipping_address = models.TextField()
-    
+
 
 class ProductDetails(models.Model):
     features = models.CharField(max_length=200)
@@ -38,3 +38,9 @@ class Products(models.Model):
     category = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField()
     details = models.ForeignKey(ProductDetails, on_delete=models.CASCADE, default=None)
+
+
+class ShoppingCart(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
