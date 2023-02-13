@@ -14,9 +14,10 @@ class Covers(models.Model):
 
 
 class Customer(models.Model):
-    name = models.CharField(max_length=50)
-    relation = models.ForeignKey(User, on_delete=models.CASCADE, default=None, blank=False)
-
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    address = models.TextField()
 
 class ProductDetails(models.Model):
     features = models.CharField(max_length=200)
