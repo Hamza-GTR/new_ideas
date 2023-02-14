@@ -37,7 +37,7 @@ class Products(models.Model):
     name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField()
-    details = models.ForeignKey(ProductDetails, on_delete=models.CASCADE, default=None)
+    detils = models.ForeignKey(ProductDetails, on_delete=models.CASCADE, default=None)
 
 
 class ShoppingCart(models.Model):
