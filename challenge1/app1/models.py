@@ -29,7 +29,7 @@ class Order(models.Model):
 
 class ProductDetails(models.Model):
     features = models.CharField(max_length=200)
-    pric = models.PositiveIntegerField()
+    price = models.PositiveIntegerField()
     discount = models.IntegerField()
 
 
