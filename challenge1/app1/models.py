@@ -20,7 +20,11 @@ class Customer(models.Model):
     address = models.TextField()
 
 
-
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+    total_cost = models.DecimalField(max_digits=10, decimal_places=2)
+    shipping_address = models.TextField()
 
 
 class ProductDetails(models.Model):
