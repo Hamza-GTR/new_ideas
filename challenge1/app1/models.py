@@ -40,7 +40,4 @@ class Products(models.Model):
     details = models.ForeignKey(ProductDetails, on_delete=models.CASCADE, default=None)
 
 
-class ShoppingCart(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    product = models.ForeignKey(Products, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
+
