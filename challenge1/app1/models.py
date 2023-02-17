@@ -27,10 +27,7 @@ class Order(models.Model):
     shipping_address = models.TextField()
 
 
-class ProductDetails(models.Model):
-    features = models.CharField(max_length=200)
-    price = models.PositiveIntegerField()
-    discount = models.IntegerField()
+
 
 
 class Products(models.Model):
