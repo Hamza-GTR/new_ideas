@@ -7,3 +7,4 @@ from .models import *
 admin.site.register(Covers)
 admin.site.register(Customer)
 admin.site.register(Order)
+admin.site.register(ProductDetails)
