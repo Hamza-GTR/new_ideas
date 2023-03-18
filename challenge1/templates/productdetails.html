@@ -8,8 +8,8 @@
       <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
     </div>
     <div class="col-md-6">
-      <h2>{{ product. }}</h2>
-      <p>{{ product.des }}</p>
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
       <h3>{{ product.price }}</h3>
       <form action="{% url 'cart' %}" method="post">
         {% csrf_token %}
